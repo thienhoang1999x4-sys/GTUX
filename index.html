@@ -1,6 +1,4 @@
-  <!-- ... phần HTML phía trên giữ nguyên ... -->
-
-  <script src="questions.js"></script>
+<script src="questions.js"></script>
 
   <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
@@ -104,27 +102,31 @@
         btn.innerText = "Nộp bài";
       });
     }
-    /* ===== Hiệu ứng hoa rơi ===== */
-.flower {
-  position: fixed;
-  top: -50px;
-  z-index: 9999;
-  pointer-events: none;
-  animation: fall linear infinite;
-  opacity: 0.8;
-  font-size: 18px;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0.3;
-  }
-}
   </script>
+
+  <!-- Đã tách phần CSS ra ngoài thẻ script và đặt vào thẻ style chuẩn -->
+  <style>
+    /* ===== Hiệu ứng hoa rơi ===== */
+    .flower {
+      position: fixed;
+      top: -50px;
+      z-index: 9999;
+      pointer-events: none;
+      animation: fall linear infinite;
+      opacity: 0.8;
+      font-size: 18px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.3;
+      }
+    }
+  </style>
 </body>
 </html>
