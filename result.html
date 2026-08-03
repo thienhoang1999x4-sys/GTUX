@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kết quả bài thi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Times New Roman", Times, serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .result-box {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 22px;
+      color: #1565c0;
+      margin-bottom: 10px;
+    }
+    .hospital {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .score {
+      font-size: 48px;
+      font-weight: bold;
+      color: #1565c0;
+      margin: 20px 0;
+    }
+    .info {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: #0066cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background: #0052a3;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <div class="hospital">BỆNH VIỆN MẮT QUỐC TẾ CUNG HỒNG SƠN</div>
+    <h1>KẾT QUẢ BÀI THI</h1>
+
+    <div class="info" id="hoten"></div>
+    <div class="info" id="sdt"></div>
+
+    <div class="score" id="diem"></div>
+    <div class="info" id="dung"></div>
+
+    <a href="index.html" class="btn">Làm lại bài thi</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const hoten = params.get('hoten') || '';
+    const sdt = params.get('sdt') || '';
+    const diem = params.get('diem') || '0';
+    const dung = params.get('dung') || '0';
+
+    document.getElementById('hoten').innerText = "Họ và tên: " + hoten;
+    if (sdt) {
+      document.getElementById('sdt').innerText = "Số điện thoại: " + sdt;
+    }
+    document.getElementById('diem').innerText = diem + " / 100";
+    document.getElementById('dung').innerText = "Số câu đúng: " + dung + " / 20";
+  </script>
+</body>
+</html>
