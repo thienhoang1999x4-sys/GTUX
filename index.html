@@ -114,9 +114,8 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>BỆNH VIỆN MẮT QUỐC TẾ CUNG HỒNG SƠN</h1>
       <h2>BÀI THI TRẮC NGHIỆM VỀ GIAO TIẾP, ỨNG XỬ CỦA NHÂN VIÊN Y TẾ NĂM 2026</h2>
-      <h3>ĐỀ SỐ 2-1</h3>
+      <h3>ĐỀ SỐ 2</h3>
     </div>
 
     <div class="info">
@@ -132,7 +131,7 @@
 
     <p style="margin-bottom: 25px; font-style: italic;">
       <strong>I. Phần thi trắc nghiệm:</strong><br>
-      - Đề thi có 20 câu hỏi, mỗi câu 01 điểm.<br>
+      - Đề thi có 20 câu hỏi, mỗi câu 5 điểm (tổng 100 điểm).<br>
       - Hãy tích chọn đáp án rồi bấm <strong>Nộp bài</strong>.
     </p>
 
@@ -385,7 +384,7 @@
       btn.innerText = "Đang nộp bài...";
 
       const questions = document.querySelectorAll('.question');
-      let dung = 0;
+      let soCauDung = 0;
       let answers = [];
 
       questions.forEach((q, index) => {
@@ -403,7 +402,7 @@
         if (selected) {
           const selectedLabel = selected.nextElementSibling;
           if (selected.value === correct) {
-            dung++;
+            soCauDung++;
             selectedLabel.classList.add('correct-answer');
           } else {
             selectedLabel.classList.add('wrong-answer');
@@ -416,11 +415,14 @@
         }
       });
 
+      // Mỗi câu đúng = 5 điểm → tổng 100
+      const diemSo = soCauDung * 5;
+
       const data = {
         hoten: hoten,
         sdt: sdt,
-        diem: dung,
-        dung: dung,
+        diem: diemSo,
+        dung: soCauDung,
         answers: answers.join(" | ")
       };
 
@@ -436,8 +438,10 @@
         const resultDiv = document.getElementById('result');
         resultDiv.innerHTML = `
           <div style="margin-bottom:10px;">Thí sinh: <strong>${hoten}</strong>${sdt ? ' - ' + sdt : ''}</div>
-          Bạn đúng <span style="color:#2e7d32; font-size:24px;">${dung}</span> / 20 câu<br>
-          Điểm số: <span style="color:#1565c0; font-size:28px;">${dung}</span> / 20 điểm<br>
+          Bạn đúng <span style="color:#2e7d32; font-size:24px;">${soCauDung}</span> / 20 câu<br>
+          <div style="margin-top:8px;">
+            Điểm số: <span style="color:#1565c0; font-size:32px;">${diemSo}</span> / 100
+          </div>
           <div style="margin-top:12px; font-size:14px; color:#2e7d32;">✓ Đã lưu kết quả vào Google Sheet</div>
         `;
         resultDiv.classList.add('show');
