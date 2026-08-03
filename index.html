@@ -62,8 +62,6 @@
     }
     .option input[type="radio"] { margin-top: 4px; flex-shrink: 0; }
     .option label { cursor: pointer; }
-    .correct-answer { color: #2e7d32; font-weight: bold; }
-    .wrong-answer { color: #c62828; }
     .btn-submit {
       display: block;
       width: 100%;
@@ -83,17 +81,6 @@
       background: #999;
       cursor: not-allowed;
     }
-    #result {
-      display: none;
-      margin: 30px 0;
-      padding: 20px;
-      background: #e3f2fd;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    #result.show { display: block; }
     footer {
       text-align: center;
       margin-top: 40px;
@@ -114,6 +101,7 @@
 <body>
   <div class="container">
     <div class="header">
+      <h1>BỆNH VIỆN MẮT QUỐC TẾ CUNG HỒNG SƠN</h1>
       <h2>BÀI THI TRẮC NGHIỆM VỀ GIAO TIẾP, ỨNG XỬ CỦA NHÂN VIÊN Y TẾ NĂM 2026</h2>
       <h3>ĐỀ SỐ 2</h3>
     </div>
@@ -356,10 +344,8 @@
         </div>
       </div>
 
-      <button type="button" class="btn-submit" id="btnSubmit" onclick="chamDiem()">Nộp bài</button>
+      <button type="button" class="btn-submit" id="btnSubmit" onclick="nopBai()">Nộp bài</button>
     </form>
-
-    <div id="result"></div>
 
     <footer>
       Bệnh viện Mắt Quốc tế Cung Hồng Sơn – Tài liệu ôn tập nội bộ 2026
@@ -369,7 +355,7 @@
   <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
 
-    function chamDiem() {
+    function nopBai() {
       const hoten = document.getElementById('hoten').value.trim();
       const sdt = document.getElementById('sdt').value.trim();
 
@@ -390,32 +376,14 @@
       questions.forEach((q, index) => {
         const correct = q.getAttribute('data-correct');
         const selected = q.querySelector('input[type="radio"]:checked');
-        const labels = q.querySelectorAll('label');
-
-        labels.forEach(label => {
-          label.classList.remove('correct-answer', 'wrong-answer');
-        });
-
         let userAnswer = selected ? selected.value : "Chưa chọn";
         answers.push(`C${index + 1}:${userAnswer}`);
 
-        if (selected) {
-          const selectedLabel = selected.nextElementSibling;
-          if (selected.value === correct) {
-            soCauDung++;
-            selectedLabel.classList.add('correct-answer');
-          } else {
-            selectedLabel.classList.add('wrong-answer');
-            const correctInput = q.querySelector(`input[value="${correct}"]`);
-            if (correctInput) correctInput.nextElementSibling.classList.add('correct-answer');
-          }
-        } else {
-          const correctInput = q.querySelector(`input[value="${correct}"]`);
-          if (correctInput) correctInput.nextElementSibling.classList.add('correct-answer');
+        if (selected && selected.value === correct) {
+          soCauDung++;
         }
       });
 
-      // Mỗi câu đúng = 5 điểm → tổng 100
       const diemSo = soCauDung * 5;
 
       const data = {
@@ -426,27 +394,22 @@
         answers: answers.join(" | ")
       };
 
+      // Gửi dữ liệu lên Google Sheet
       fetch(SCRIPT_URL, {
         method: "POST",
         body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8"
-        }
+        headers: { "Content-Type": "text/plain;charset=utf-8" }
       })
       .then(res => res.json())
       .then(res => {
-        const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = `
-          <div style="margin-bottom:10px;">Thí sinh: <strong>${hoten}</strong>${sdt ? ' - ' + sdt : ''}</div>
-          Bạn đúng <span style="color:#2e7d32; font-size:24px;">${soCauDung}</span> / 20 câu<br>
-          <div style="margin-top:8px;">
-            Điểm số: <span style="color:#1565c0; font-size:32px;">${diemSo}</span> / 100
-          </div>
-          <div style="margin-top:12px; font-size:14px; color:#2e7d32;">✓ Đã lưu kết quả vào Google Sheet</div>
-        `;
-        resultDiv.classList.add('show');
-        resultDiv.scrollIntoView({ behavior: 'smooth' });
-        btn.innerText = "Đã nộp bài";
+        // Chuyển sang trang kết quả
+        const params = new URLSearchParams({
+          hoten: hoten,
+          sdt: sdt,
+          diem: diemSo,
+          dung: soCauDung
+        });
+        window.location.href = "result.html?" + params.toString();
       })
       .catch(err => {
         console.error(err);
