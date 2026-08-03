@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bài thi Trắc nghiệm Giao tiếp - Ứng xử NVYT 2026</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Times New Roman", Times, serif;
       line-height: 1.5;
@@ -31,36 +27,17 @@
       border-bottom: 2px solid #0066cc;
       padding-bottom: 20px;
     }
-    .header h1 {
-      font-size: 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .header h2 {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-    .header h3 {
-      font-size: 16px;
-      font-weight: bold;
-      color: #c00;
-    }
-    .info {
-      margin: 25px 0;
-      font-size: 15px;
-    }
+    .header h1 { font-size: 20px; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; }
+    .header h2 { font-size: 18px; font-weight: bold; margin-bottom: 4px; }
+    .header h3 { font-size: 16px; font-weight: bold; color: #c00; }
+    .info { margin: 25px 0; font-size: 15px; }
     .info-row {
       display: flex;
       align-items: center;
       margin-bottom: 12px;
       gap: 10px;
     }
-    .info-row label {
-      font-weight: bold;
-      min-width: 120px;
-    }
+    .info-row label { font-weight: bold; min-width: 120px; }
     .info-row input {
       flex: 1;
       padding: 8px 12px;
@@ -74,37 +51,19 @@
       border-color: #0066cc;
       box-shadow: 0 0 0 3px rgba(0,102,204,0.15);
     }
-    .question {
-      margin-bottom: 28px;
-    }
-    .question-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 15.5px;
-    }
-    .options {
-      margin-left: 10px;
-    }
+    .question { margin-bottom: 28px; }
+    .question-title { font-weight: bold; margin-bottom: 10px; font-size: 15.5px; }
+    .options { margin-left: 10px; }
     .option {
       margin-bottom: 8px;
       display: flex;
       align-items: flex-start;
       gap: 8px;
     }
-    .option input[type="radio"] {
-      margin-top: 4px;
-      flex-shrink: 0;
-    }
-    .option label {
-      cursor: pointer;
-    }
-    .correct-answer {
-      color: #2e7d32;
-      font-weight: bold;
-    }
-    .wrong-answer {
-      color: #c62828;
-    }
+    .option input[type="radio"] { margin-top: 4px; flex-shrink: 0; }
+    .option label { cursor: pointer; }
+    .correct-answer { color: #2e7d32; font-weight: bold; }
+    .wrong-answer { color: #c62828; }
     .btn-submit {
       display: block;
       width: 100%;
@@ -119,8 +78,10 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .btn-submit:hover {
-      background: #0052a3;
+    .btn-submit:hover { background: #0052a3; }
+    .btn-submit:disabled {
+      background: #999;
+      cursor: not-allowed;
     }
     #result {
       display: none;
@@ -132,9 +93,7 @@
       font-size: 18px;
       font-weight: bold;
     }
-    #result.show {
-      display: block;
-    }
+    #result.show { display: block; }
     footer {
       text-align: center;
       margin-top: 40px;
@@ -144,22 +103,11 @@
       padding-top: 15px;
     }
     @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-      .header h1 {
-        font-size: 16px;
-      }
-      .info-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .info-row label {
-        min-width: auto;
-      }
-      .info-row input {
-        width: 100%;
-      }
+      .container { padding: 20px; }
+      .header h1 { font-size: 16px; }
+      .info-row { flex-direction: column; align-items: flex-start; }
+      .info-row label { min-width: auto; }
+      .info-row input { width: 100%; }
     }
   </style>
 </head>
@@ -174,18 +122,18 @@
     <div class="info">
       <div class="info-row">
         <label for="hoten">Họ và tên:</label>
-        <input type="text" id="hoten" name="hoten" placeholder="Nhập họ và tên" required>
+        <input type="text" id="hoten" placeholder="Nhập họ và tên" required>
       </div>
       <div class="info-row">
         <label for="sdt">Số điện thoại:</label>
-        <input type="tel" id="sdt" name="sdt" placeholder="Nhập số điện thoại">
+        <input type="tel" id="sdt" placeholder="Nhập số điện thoại">
       </div>
     </div>
 
     <p style="margin-bottom: 25px; font-style: italic;">
       <strong>I. Phần thi trắc nghiệm:</strong><br>
       - Đề thi có 20 câu hỏi, mỗi câu 01 điểm.<br>
-      - Hãy tích chọn đáp án rồi bấm <strong>Nộp bài</strong> để xem kết quả.
+      - Hãy tích chọn đáp án rồi bấm <strong>Nộp bài</strong>.
     </p>
 
     <form id="quizForm">
@@ -332,7 +280,7 @@
         </div>
       </div>
 
-      <!-- Câu 14 (đã sửa lỗi) -->
+      <!-- Câu 14 -->
       <div class="question" data-correct="C">
         <div class="question-title">Câu 14. Người bệnh phát hiện bị gọi nhầm tên và tỏ ra khó chịu. Bạn nên:</div>
         <div class="options">
@@ -409,7 +357,7 @@
         </div>
       </div>
 
-      <button type="button" class="btn-submit" onclick="chamDiem()">Nộp bài</button>
+      <button type="button" class="btn-submit" id="btnSubmit" onclick="chamDiem()">Nộp bài</button>
     </form>
 
     <div id="result"></div>
@@ -420,19 +368,27 @@
   </div>
 
   <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
+
     function chamDiem() {
       const hoten = document.getElementById('hoten').value.trim();
+      const sdt = document.getElementById('sdt').value.trim();
+
       if (!hoten) {
         alert('Vui lòng nhập Họ và tên trước khi nộp bài!');
         document.getElementById('hoten').focus();
         return;
       }
 
+      const btn = document.getElementById('btnSubmit');
+      btn.disabled = true;
+      btn.innerText = "Đang nộp bài...";
+
       const questions = document.querySelectorAll('.question');
       let dung = 0;
-      const tong = questions.length;
+      let answers = [];
 
-      questions.forEach((q) => {
+      questions.forEach((q, index) => {
         const correct = q.getAttribute('data-correct');
         const selected = q.querySelector('input[type="radio"]:checked');
         const labels = q.querySelectorAll('label');
@@ -440,6 +396,9 @@
         labels.forEach(label => {
           label.classList.remove('correct-answer', 'wrong-answer');
         });
+
+        let userAnswer = selected ? selected.value : "Chưa chọn";
+        answers.push(`C${index + 1}:${userAnswer}`);
 
         if (selected) {
           const selectedLabel = selected.nextElementSibling;
@@ -449,27 +408,48 @@
           } else {
             selectedLabel.classList.add('wrong-answer');
             const correctInput = q.querySelector(`input[value="${correct}"]`);
-            if (correctInput) {
-              correctInput.nextElementSibling.classList.add('correct-answer');
-            }
+            if (correctInput) correctInput.nextElementSibling.classList.add('correct-answer');
           }
         } else {
           const correctInput = q.querySelector(`input[value="${correct}"]`);
-          if (correctInput) {
-            correctInput.nextElementSibling.classList.add('correct-answer');
-          }
+          if (correctInput) correctInput.nextElementSibling.classList.add('correct-answer');
         }
       });
 
-      const sdt = document.getElementById('sdt').value.trim();
-      const resultDiv = document.getElementById('result');
-      resultDiv.innerHTML = `
-        <div style="margin-bottom:10px;">Thí sinh: <strong>${hoten}</strong>${sdt ? ' - ' + sdt : ''}</div>
-        Bạn đúng <span style="color:#2e7d32; font-size:24px;">${dung}</span> / ${tong} câu<br>
-        Điểm số: <span style="color:#1565c0; font-size:28px;">${dung}</span> / 20 điểm
-      `;
-      resultDiv.classList.add('show');
-      resultDiv.scrollIntoView({ behavior: 'smooth' });
+      const data = {
+        hoten: hoten,
+        sdt: sdt,
+        diem: dung,
+        dung: dung,
+        answers: answers.join(" | ")
+      };
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        }
+      })
+      .then(res => res.json())
+      .then(res => {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `
+          <div style="margin-bottom:10px;">Thí sinh: <strong>${hoten}</strong>${sdt ? ' - ' + sdt : ''}</div>
+          Bạn đúng <span style="color:#2e7d32; font-size:24px;">${dung}</span> / 20 câu<br>
+          Điểm số: <span style="color:#1565c0; font-size:28px;">${dung}</span> / 20 điểm<br>
+          <div style="margin-top:12px; font-size:14px; color:#2e7d32;">✓ Đã lưu kết quả vào Google Sheet</div>
+        `;
+        resultDiv.classList.add('show');
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+        btn.innerText = "Đã nộp bài";
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!");
+        btn.disabled = false;
+        btn.innerText = "Nộp bài";
+      });
     }
   </script>
 </body>
