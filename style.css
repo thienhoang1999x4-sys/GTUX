@@ -1,47 +1,30 @@
-/* ===== Form Giới thiệu ===== */
-.form-gioi-thieu {
-  max-width: 500px;
-  margin-top: 20px;
+// ===== Hiệu ứng hoa rơi =====
+function createFlower() {
+  const flower = document.createElement('div');
+  flower.classList.add('flower');
+  
+  // Các loại hoa
+  const flowers = ['🌸', '🌺', '🌼', '💮', '🏵️', '🌷'];
+  flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+  
+  // Vị trí và tốc độ ngẫu nhiên
+  flower.style.left = Math.random() * 100 + 'vw';
+  flower.style.fontSize = (Math.random() * 12 + 14) + 'px';
+  flower.style.animationDuration = (Math.random() * 4 + 4) + 's';
+  flower.style.animationDelay = Math.random() * 2 + 's';
+  
+  document.body.appendChild(flower);
+  
+  // Xóa hoa sau khi rơi xong
+  setTimeout(() => {
+    flower.remove();
+  }, 8000);
 }
 
-.form-group {
-  margin-bottom: 16px;
-}
+// Tạo hoa liên tục
+setInterval(createFlower, 350);
 
-.form-group label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #0066cc;
-  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.15);
-}
-
-button[type="submit"] {
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-top: 8px;
-}
-
-button[type="submit"]:hover {
-  background-color: #0052a3;
+// Tạo một ít hoa lúc mới vào trang
+for (let i = 0; i < 8; i++) {
+  setTimeout(createFlower, i * 200);
 }
