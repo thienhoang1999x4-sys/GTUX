@@ -104,6 +104,27 @@
         btn.innerText = "Nộp bài";
       });
     }
+    /* ===== Hiệu ứng hoa rơi ===== */
+.flower {
+  position: fixed;
+  top: -50px;
+  z-index: 9999;
+  pointer-events: none;
+  animation: fall linear infinite;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
   </script>
 </body>
 </html>
