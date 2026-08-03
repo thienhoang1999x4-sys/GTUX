@@ -1,6 +1,38 @@
-<script src="questions.js"></script>
+  <!-- ... phần HTML phía trên giữ nguyên ... -->
+
+  <script src="questions.js"></script>
 
   <script>
+    // ===== Hiệu ứng hoa rơi =====
+function createFlower() {
+  const flower = document.createElement('div');
+  flower.classList.add('flower');
+  
+  // Các loại hoa
+  const flowers = ['🌸', '🌺', '🌼', '💮', '🏵️', '🌷'];
+  flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+  
+  // Vị trí và tốc độ ngẫu nhiên
+  flower.style.left = Math.random() * 100 + 'vw';
+  flower.style.fontSize = (Math.random() * 12 + 14) + 'px';
+  flower.style.animationDuration = (Math.random() * 4 + 4) + 's';
+  flower.style.animationDelay = Math.random() * 2 + 's';
+  
+  document.body.appendChild(flower);
+  
+  // Xóa hoa sau khi rơi xong
+  setTimeout(() => {
+    flower.remove();
+  }, 8000);
+}
+
+// Tạo hoa liên tục
+setInterval(createFlower, 350);
+
+// Tạo một ít hoa lúc mới vào trang
+for (let i = 0; i < 8; i++) {
+  setTimeout(createFlower, i * 200);
+}
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
 
     function shuffle(array) {
@@ -103,30 +135,5 @@
       });
     }
   </script>
-
-  <!-- Đã tách phần CSS ra ngoài thẻ script và đặt vào thẻ style chuẩn -->
-  <style>
-    /* ===== Hiệu ứng hoa rơi ===== */
-    .flower {
-      position: fixed;
-      top: -50px;
-      z-index: 9999;
-      pointer-events: none;
-      animation: fall linear infinite;
-      opacity: 0.8;
-      font-size: 18px;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.9;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0.3;
-      }
-    }
-  </style>
 </body>
 </html>
