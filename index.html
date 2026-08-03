@@ -1,7 +1,49 @@
-  <!-- ... phần HTML phía trên giữ nguyên ... -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Làm bài trắc nghiệm</title>
+  
+  <!-- CSS cho hiệu ứng hoa rơi (phải đặt trong thẻ style) -->
+  <style>
+    .flower {
+      position: fixed;
+      top: -50px;
+      z-index: 9999;
+      pointer-events: none;
+      animation: fall linear infinite;
+      opacity: 0.8;
+      font-size: 18px;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.3;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Phần hiển thị câu hỏi -->
+  <div id="question-container"></div>
+  
+  <!-- Form nhập thông tin & nút nộp bài (Ví dụ minh họa, bạn giữ nguyên form của bạn) -->
+  <div>
+    <input type="text" id="hoten" placeholder="Nhập họ tên...">
+    <input type="text" id="sdt" placeholder="Nhập số điện thoại...">
+    <button id="btnSubmit" onclick="nopBai()">Nộp bài</button>
+  </div>
 
   <script src="questions.js"></script>
 
+  <!-- JavaScript xử lý logic trắc nghiệm và hiệu ứng hoa rơi -->
   <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
 
@@ -104,36 +146,32 @@
         btn.innerText = "Nộp bài";
       });
     }
+
     // ===== Hiệu ứng hoa rơi =====
-  function createFlower() {
-    const flower = document.createElement('div');
-    flower.classList.add('flower');
-  
-    // Các loại hoa
-    const flowers = ['🌸', '🌺', '🌼', '💮', '🏵️', '🌷'];
-    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-  
-    // Vị trí và tốc độ ngẫu nhiên
-    flower.style.left = Math.random() * 100 + 'vw';
-    flower.style.fontSize = (Math.random() * 12 + 14) + 'px';
-    flower.style.animationDuration = (Math.random() * 4 + 4) + 's';
-    flower.style.animationDelay = Math.random() * 2 + 's';
-  
-    document.body.appendChild(flower);
-  
-    // Xóa hoa sau khi rơi xong
-    setTimeout(() => {
-      flower.remove();
-    }, 8000);
-  }
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      
+      const flowers = ['🌸', '🌺', '🌼', '💮', '🏵️', '🌷'];
+      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+      
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.fontSize = (Math.random() * 12 + 14) + 'px';
+      flower.style.animationDuration = (Math.random() * 4 + 4) + 's';
+      flower.style.animationDelay = Math.random() * 2 + 's';
+      
+      document.body.appendChild(flower);
+      
+      setTimeout(() => {
+        flower.remove();
+      }, 8000);
+    }
 
-  // Tạo hoa liên tục
-  setInterval(createFlower, 350);
+    setInterval(createFlower, 350);
 
-  // Tạo một ít hoa lúc mới vào trang
-  for (let i = 0; i < 8; i++) {
-    setTimeout(createFlower, i * 200);
-  }
+    for (let i = 0; i < 8; i++) {
+      setTimeout(createFlower, i * 200);
+    }
   </script>
 </body>
 </html>
