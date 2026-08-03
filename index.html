@@ -105,35 +105,35 @@
       });
     }
     // ===== Hiệu ứng hoa rơi =====
-function createFlower() {
-  const flower = document.createElement('div');
-  flower.classList.add('flower');
+  function createFlower() {
+    const flower = document.createElement('div');
+    flower.classList.add('flower');
   
-  // Các loại hoa
-  const flowers = ['🌸', '🌺', '🌼', '💮', '🏵️', '🌷'];
-  flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+    // Các loại hoa
+    const flowers = ['🌸', '🌺', '🌼', '💮', '🏵️', '🌷'];
+    flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
   
-  // Vị trí và tốc độ ngẫu nhiên
-  flower.style.left = Math.random() * 100 + 'vw';
-  flower.style.fontSize = (Math.random() * 12 + 14) + 'px';
-  flower.style.animationDuration = (Math.random() * 4 + 4) + 's';
-  flower.style.animationDelay = Math.random() * 2 + 's';
+    // Vị trí và tốc độ ngẫu nhiên
+    flower.style.left = Math.random() * 100 + 'vw';
+    flower.style.fontSize = (Math.random() * 12 + 14) + 'px';
+    flower.style.animationDuration = (Math.random() * 4 + 4) + 's';
+    flower.style.animationDelay = Math.random() * 2 + 's';
   
-  document.body.appendChild(flower);
+    document.body.appendChild(flower);
   
-  // Xóa hoa sau khi rơi xong
-  setTimeout(() => {
-    flower.remove();
-  }, 8000);
-}
+    // Xóa hoa sau khi rơi xong
+    setTimeout(() => {
+      flower.remove();
+    }, 8000);
+  }
 
-// Tạo hoa liên tục
-setInterval(createFlower, 350);
+  // Tạo hoa liên tục
+  setInterval(createFlower, 350);
 
-// Tạo một ít hoa lúc mới vào trang
-for (let i = 0; i < 8; i++) {
-  setTimeout(createFlower, i * 200);
-}
+  // Tạo một ít hoa lúc mới vào trang
+  for (let i = 0; i < 8; i++) {
+    setTimeout(createFlower, i * 200);
+  }
   </script>
 </body>
 </html>
