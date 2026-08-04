@@ -181,8 +181,8 @@
         <input type="text" id="hoten" placeholder="Câu trả lời của bạn" required>
       </div>
       <div class="info-row">
-        <label for="sdt">Chức Danh</label>
-        <input type="tel" id="sdt" placeholder="Câu trả lời của bạn">
+        <label for="cd">Chức Danh</label>
+        <input type="tel" id="cd" placeholder="Câu trả lời của bạn">
       </div>
     </div>
 
@@ -240,7 +240,7 @@
 
     function nopBai() {
       const hoten = document.getElementById('hoten').value.trim();
-      const sdt = document.getElementById('sdt').value.trim();
+      const cd = document.getElementById('cd').value.trim();
 
       if (!hoten) {
         alert('Vui lòng nhập Họ và tên trước khi nộp bài!');
@@ -271,7 +271,7 @@
 
       const data = {
         hoten: hoten,
-        sdt: sdt,
+        cd: cd,
         diem: diemSo,
         dung: soCauDung,
         answers: answers.join(" | ")
@@ -286,7 +286,7 @@
       .then(res => {
         const params = new URLSearchParams({
           hoten: hoten,
-          sdt: sdt,
+          cd: cd,
           diem: diemSo,
           dung: soCauDung
         });
