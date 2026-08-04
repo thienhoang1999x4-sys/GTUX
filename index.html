@@ -268,4 +268,25 @@
 
       fetch(SCRIPT_URL, {
         method: "POST",
-        body: JSON.stringify(data
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "text/plain;charset=utf-8" }
+      })
+      .then(res => res.json())
+      .then(res => {
+        const params = new URLSearchParams({
+          hoten: hoten,
+          diem: diemSo,
+          dung: soCauDung
+        });
+        window.location.href = "result.html?" + params.toString();
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!");
+        btn.disabled = false;
+        btn.innerText = "Gửi";
+      });
+    }
+  </script>
+</body>
+</html>
