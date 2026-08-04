@@ -1,190 +1,360 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài thi Trắc nghiệm Giao tiếp - Ứng xử NVYT 2026</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<title>Bài thi trắc nghiệm</title>
+    body {
+      font-family: "Google Sans", Roboto, Arial, sans-serif;
+      background: #f0eef7;
+      color: #202124;
+      padding: 24px 16px;
+      line-height: 1.5;
+    }
 
-<style>
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    /* Header card */
+    .header-card {
+      background: white;
+      border-radius: 8px;
+      border-top: 10px solid #673ab7;
+      padding: 24px 28px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#eef1f8;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    padding:40px 20px;
-}
+    .header-card h1 {
+      font-size: 28px;
+      font-weight: 400;
+      color: #202124;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
 
-.wrapper{
-    width:100%;
-    max-width:900px;
-}
+    .header-card .desc {
+      font-size: 14px;
+      color: #5f6368;
+    }
 
-.header{
-    background:#fff;
-    border-top:8px solid #673ab7;
-    border-radius:12px;
-    padding:35px;
-    margin-bottom:25px;
-    box-shadow:0 3px 15px rgba(0,0,0,.08);
-}
+    /* Info card */
+    .info-card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px 28px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
 
-.header h1{
-    font-size:42px;
-    line-height:1.3;
-}
+    .info-row {
+      margin-bottom: 16px;
+    }
 
-.question{
-    background:#fff;
-    border-radius:12px;
-    padding:30px;
-    margin-bottom:20px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
+    .info-row:last-child {
+      margin-bottom: 0;
+    }
 
-.question-title{
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:20px;
-}
+    .info-row label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #202124;
+    }
 
-.option{
-    display:flex;
-    align-items:flex-start;
-    margin:18px 0;
-}
+    .info-row input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border 0.2s;
+    }
 
-.option input{
-    transform:scale(1.4);
-    margin-right:15px;
-    margin-top:5px;
-}
+    .info-row input:focus {
+      border-color: #673ab7;
+      box-shadow: 0 0 0 2px rgba(103, 58, 183, 0.2);
+    }
 
-.option label{
-    font-size:22px;
-    line-height:1.6;
-    cursor:pointer;
-}
+    /* Question card */
+    .question {
+      background: white;
+      border-radius: 8px;
+      padding: 20px 28px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-left: 6px solid #673ab7;
+    }
 
-.form-box{
-    background:#fff;
-    border-radius:12px;
-    padding:30px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-    margin-bottom:30px;
-}
+    .question-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: #202124;
+    }
 
-.form-box input{
-    width:100%;
-    padding:16px;
-    margin-bottom:18px;
-    font-size:20px;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
+    .question-title .required {
+      color: #d93025;
+      margin-left: 2px;
+    }
 
-button{
-    width:100%;
-    padding:18px;
-    font-size:24px;
-    background:#1565c0;
-    color:#fff;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-}
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-button:hover{
-    background:#0d47a1;
-}
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+    }
 
-/* Hoa rơi */
+    .option input[type="radio"] {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: #673ab7;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
 
-.flower{
-    position:fixed;
-    top:-50px;
-    pointer-events:none;
-    z-index:9999;
-    animation:fall linear infinite;
-}
+    .option label {
+      font-size: 14px;
+      color: #202124;
+      cursor: pointer;
+      line-height: 1.4;
+    }
 
-@keyframes fall{
-0%{
-transform:translateY(0) rotate(0deg);
-opacity:.9;
-}
-100%{
-transform:translateY(110vh) rotate(360deg);
-opacity:.3;
-}
-}
+    /* Submit button */
+    .btn-submit {
+      display: block;
+      width: 100%;
+      max-width: 180px;
+      margin: 24px auto 0;
+      padding: 12px 24px;
+      background: #673ab7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: background 0.2s;
+    }
 
-@media(max-width:768px){
+    .btn-submit:hover {
+      background: #5e35b1;
+    }
 
-.header h1{
-font-size:30px;
-}
+    .btn-submit:disabled {
+      background: #9e9e9e;
+      cursor: not-allowed;
+    }
 
-.question-title{
-font-size:22px;
-}
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 12px;
+      color: #5f6368;
+    }
 
-.option label{
-font-size:18px;
-}
+    /* Hoa rơi */
+    .flower {
+      position: fixed;
+      top: -40px;
+      z-index: 9999;
+      pointer-events: none;
+      animation: fall linear infinite;
+      opacity: 0.75;
+    }
 
-button{
-font-size:20px;
-}
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.85;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.2;
+      }
+    }
 
-}
-
-</style>
-
+    @media (max-width: 600px) {
+      body {
+        padding: 12px 8px;
+      }
+      .header-card, .info-card, .question {
+        padding: 16px 18px;
+      }
+      .header-card h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header-card">
+      <h1>BÀI THI TRẮC NGHIỆM VỀ GIAO TIẾP, ỨNG XỬ CỦA NHÂN VIÊN Y TẾ NĂM 2026 LẦN 1</h1>
+      <div class="desc">Form description</div>
+    </div>
 
-<div class="wrapper">
+    <!-- Thông tin thí sinh -->
+    <div class="info-card">
+      <div class="info-row">
+        <label for="hoten">Họ và tên <span style="color:#d93025">*</span></label>
+        <input type="text" id="hoten" placeholder="Câu trả lời của bạn" required>
+      </div>
+      <div class="info-row">
+        <label for="sdt">Số điện thoại</label>
+        <input type="tel" id="sdt" placeholder="Câu trả lời của bạn">
+      </div>
+    </div>
 
-<div class="header">
-<h1>
-BÀI THI TRẮC NGHIỆM VỀ GIAO TIẾP, ỨNG XỬ<br>
-CỦA NHÂN VIÊN Y TẾ NĂM 2026 LẦN 1
-</h1>
-</div>
+    <!-- Câu hỏi sẽ được render ở đây -->
+    <div id="question-container"></div>
 
-<div id="question-container"></div>
+    <button type="button" class="btn-submit" id="btnSubmit" onclick="nopBai()">Gửi</button>
 
-<div class="form-box">
-<input type="text" id="hoten" placeholder="Nhập họ và tên">
-<input type="text" id="sdt" placeholder="Nhập số điện thoại">
+    <footer>
+      Bệnh viện Mắt Quốc tế Cung Hồng Sơn – Tài liệu ôn tập nội bộ 2026
+    </footer>
+  </div>
 
-<button id="btnSubmit" onclick="nopBai()">
-Nộp bài
-</button>
-</div>
+  <script src="questions.js"></script>
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
 
-<script src="questions.js"></script>
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
 
-<script>
+    function renderQuestions() {
+      const container = document.getElementById('question-container');
+      const shuffled = shuffle([...questionsData]);
 
-/* GIỮ NGUYÊN TOÀN BỘ PHẦN JAVASCRIPT CỦA BẠN
-   từ dòng:
-   const SCRIPT_URL = "...";
-   đến hết file */
+      shuffled.forEach((q, index) => {
+        const qDiv = document.createElement('div');
+        qDiv.className = 'question';
+        qDiv.setAttribute('data-correct', q.correct);
 
-</script>
+        let optionsHtml = q.options.map((opt) => {
+          const value = opt.charAt(0);
+          const id = `q${index}_${value}`;
+          return `
+            <div class="option">
+              <input type="radio" name="q${index}" value="${value}" id="${id}">
+              <label for="${id}">${opt.substring(3)}</label>
+            </div>
+          `;
+        }).join('');
 
-</div>
+        qDiv.innerHTML = `
+          <div class="question-title">${index + 1}. ${q.title} <span class="required">*</span></div>
+          <div class="options">${optionsHtml}</div>
+        `;
+        container.appendChild(qDiv);
+      });
+    }
 
+    renderQuestions();
+
+    // Hoa rơi
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      const flowers = ['🌸', '🌺', '🌼', '💮', '🌷'];
+      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.fontSize = (Math.random() * 10 + 14) + 'px';
+      flower.style.animationDuration = (Math.random() * 4 + 5) + 's';
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 9000);
+    }
+    setInterval(createFlower, 400);
+    for (let i = 0; i < 6; i++) setTimeout(createFlower, i * 300);
+
+    function nopBai() {
+      const hoten = document.getElementById('hoten').value.trim();
+      const sdt = document.getElementById('sdt').value.trim();
+
+      if (!hoten) {
+        alert('Vui lòng nhập Họ và tên trước khi nộp bài!');
+        document.getElementById('hoten').focus();
+        return;
+      }
+
+      const btn = document.getElementById('btnSubmit');
+      btn.disabled = true;
+      btn.innerText = "Đang gửi...";
+
+      const questions = document.querySelectorAll('.question');
+      let soCauDung = 0;
+      let answers = [];
+
+      questions.forEach((q, index) => {
+        const correct = q.getAttribute('data-correct');
+        const selected = q.querySelector('input[type="radio"]:checked');
+        let userAnswer = selected ? selected.value : "Chưa chọn";
+        answers.push(`C${index + 1}:${userAnswer}`);
+
+        if (selected && selected.value === correct) {
+          soCauDung++;
+        }
+      });
+
+      const diemSo = soCauDung * 5;
+
+      const data = {
+        hoten: hoten,
+        sdt: sdt,
+        diem: diemSo,
+        dung: soCauDung,
+        answers: answers.join(" | ")
+      };
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "text/plain;charset=utf-8" }
+      })
+      .then(res => res.json())
+      .then(res => {
+        const params = new URLSearchParams({
+          hoten: hoten,
+          sdt: sdt,
+          diem: diemSo,
+          dung: soCauDung
+        });
+        window.location.href = "result.html?" + params.toString();
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!");
+        btn.disabled = false;
+        btn.innerText = "Gửi";
+      });
+    }
+  </script>
 </body>
 </html>
