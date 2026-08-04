@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bài thi Trắc nghiệm Giao tiếp - Ứng xử NVYT 2026</title>
+  <title>Kết quả bài thi - NVYT 2026</title>
   <style>
     * {
       margin: 0;
@@ -16,323 +16,165 @@
       color: #202124;
       padding: 24px 16px;
       line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .container {
-      max-width: 640px;
-      margin: 0 auto;
+      max-width: 520px;
+      width: 100%;
     }
-    .header-card {
+    .result-card {
       background: white;
-      border-radius: 8px;
+      border-radius: 12px;
       border-top: 10px solid #673ab7;
-      padding: 24px 28px;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    .header-card h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #202124;
-      margin-bottom: 8px;
-      line-height: 1.3;
+      padding: 32px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
       text-align: center;
     }
-    .info-card {
-      background: white;
-      border-radius: 8px;
-      padding: 20px 28px;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    .result-card h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #202124;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #5f6368;
+      margin-bottom: 28px;
+    }
+    .score-box {
+      background: #f3e8ff;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .score-label {
+      font-size: 14px;
+      color: #5f6368;
+      margin-bottom: 6px;
+    }
+    .score-value {
+      font-size: 48px;
+      font-weight: 700;
+      color: #673ab7;
+      line-height: 1.1;
+    }
+    .score-max {
+      font-size: 20px;
+      color: #5f6368;
+      font-weight: 500;
     }
     .info-row {
-      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
     }
     .info-row:last-child {
-      margin-bottom: 0;
+      border-bottom: none;
     }
-    .info-row label {
-      display: block;
-      font-size: 14px;
+    .info-label {
+      color: #5f6368;
+    }
+    .info-value {
       font-weight: 500;
-      margin-bottom: 6px;
       color: #202124;
     }
-    .info-row input {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #dadce0;
-      border-radius: 4px;
-      font-size: 14px;
-      font-family: inherit;
-      outline: none;
-      transition: border 0.2s;
-    }
-    .info-row input:focus {
-      border-color: #673ab7;
-      box-shadow: 0 0 0 2px rgba(103, 58, 183, 0.2);
-    }
-    .question {
-      background: white;
-      border-radius: 8px;
-      padding: 20px 28px;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      border-left: 6px solid #673ab7;
-    }
-    .question-title {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 16px;
-      color: #202124;
-    }
-    .question-title .required {
-      color: #d93025;
-      margin-left: 2px;
-    }
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .option {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      cursor: pointer;
-    }
-    .option input[type="radio"] {
-      margin-top: 3px;
-      width: 18px;
-      height: 18px;
-      accent-color: #673ab7;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .option label {
-      font-size: 14px;
-      color: #202124;
-      cursor: pointer;
-      line-height: 1.4;
-    }
-    .btn-submit {
-      display: block;
-      width: 100%;
-      max-width: 180px;
-      margin: 24px auto 0;
-      padding: 12px 24px;
+    .btn-back {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 32px;
       background: #673ab7;
       color: white;
       border: none;
-      border-radius: 4px;
-      font-size: 14px;
+      border-radius: 6px;
+      font-size: 15px;
       font-weight: 500;
+      text-decoration: none;
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
       transition: background 0.2s;
     }
-    .btn-submit:hover {
+    .btn-back:hover {
       background: #5e35b1;
     }
-    .btn-submit:disabled {
-      background: #9e9e9e;
-      cursor: not-allowed;
+    .status {
+      margin-top: 16px;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: inline-block;
     }
-    footer {
-      text-align: center;
-      margin-top: 32px;
-      font-size: 12px;
-      color: #5f6368;
+    .status.pass {
+      background: #e6f4ea;
+      color: #137333;
     }
-
-    /* ===== LOADING OVERLAY ===== */
-    .loading-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .loading-overlay.show {
-      display: flex;
-    }
-    .spinner {
-      width: 48px;
-      height: 48px;
-      border: 4px solid #e0d4f7;
-      border-top: 4px solid #673ab7;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    .loading-text {
-      font-size: 16px;
-      font-weight: 500;
-      color: #673ab7;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 12px 8px;
-      }
-      .header-card, .info-card, .question {
-        padding: 16px 18px;
-      }
-      .header-card h1 {
-        font-size: 22px;
-        font-weight: 700;
-        text-align: center;
-      }
+    .status.fail {
+      background: #fce8e6;
+      color: #c5221f;
     }
   </style>
 </head>
 <body>
-  <!-- Loading Overlay -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="spinner"></div>
-    <div class="loading-text">Đang nộp bài...</div>
-  </div>
-
   <div class="container">
-    <div class="header-card">
-      <h1>BÀI THI TRẮC NGHIỆM VỀ GIAO TIẾP, ỨNG XỬ CỦA NHÂN VIÊN Y TẾ NĂM 2026 THÁNG 8</h1>
-    </div>
+    <div class="result-card">
+      <h1>Kết quả bài thi</h1>
+      <div class="subtitle">Giao tiếp & Ứng xử NVYT - Tháng 8/2026</div>
 
-    <div class="info-card">
+      <div class="score-box">
+        <div class="score-label">Điểm số của bạn</div>
+        <div class="score-value">
+          <span id="diem">0</span>
+          <span class="score-max">/ 100</span>
+        </div>
+      </div>
+
       <div class="info-row">
-        <label for="hoten">Họ và tên <span style="color:#d93025">*</span></label>
-        <input type="text" id="hoten" placeholder="Câu trả lời của bạn" required>
+        <span class="info-label">Họ và tên</span>
+        <span class="info-value" id="hoten">—</span>
       </div>
       <div class="info-row">
-        <label for="sdt">Chức danh</label>
-        <input type="tel" id="sdt" placeholder="Câu trả lời của bạn">
+        <span class="info-label">Chức danh</span>
+        <span class="info-value" id="cd">—</span>
       </div>
+      <div class="info-row">
+        <span class="info-label">Số câu đúng</span>
+        <span class="info-value" id="dung">—</span>
+      </div>
+
+      <div id="status" class="status"></div>
+
+      <a href="index.html" class="btn-back">Làm lại bài thi</a>
     </div>
-
-    <div id="question-container"></div>
-
-    <button type="button" class="btn-submit" id="btnSubmit" onclick="nopBai()">Gửi</button>
-
-    <footer>
-      Bệnh viện Mắt Quốc tế Cung Hồng Sơn – Tài liệu ôn tập nội bộ 2026
-    </footer>
   </div>
 
-  <script src="questions.js"></script>
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
+    // Lấy dữ liệu từ URL
+    const params = new URLSearchParams(window.location.search);
 
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
+    const hoten = params.get("hoten") || "Không có dữ liệu";
+    const cd    = params.get("cd") || "—";
+    const diem  = params.get("diem") || "0";
+    const dung  = params.get("dung") || "0";
 
-    function renderQuestions() {
-      const container = document.getElementById('question-container');
-      const shuffled = shuffle([...questionsData]);
+    // Hiển thị lên trang
+    document.getElementById("hoten").textContent = hoten;
+    document.getElementById("cd").textContent = cd;
+    document.getElementById("diem").textContent = diem;
+    document.getElementById("dung").textContent = dung + " câu";
 
-      shuffled.forEach((q, index) => {
-        const qDiv = document.createElement('div');
-        qDiv.className = 'question';
+    // Đánh giá đạt / không đạt (ví dụ: >= 70 điểm là đạt)
+    const statusEl = document.getElementById("status");
+    const diemSo = Number(diem);
 
-        let optionsHtml = q.options.map((opt) => {
-          const value = opt.charAt(0);
-          const id = `q${index}_${value}`;
-          return `
-            <div class="option">
-              <input type="radio" name="q${index}" value="${value}" id="${id}">
-              <label for="${id}">${opt.substring(3)}</label>
-            </div>
-          `;
-        }).join('');
-
-        qDiv.innerHTML = `
-          <div class="question-title">${index + 1}. ${q.title} <span class="required">*</span></div>
-          <div class="options">${optionsHtml}</div>
-        `;
-        container.appendChild(qDiv);
-      });
-    }
-
-    renderQuestions();
-
-    function showLoading() {
-      document.getElementById('loadingOverlay').classList.add('show');
-    }
-
-    function hideLoading() {
-      document.getElementById('loadingOverlay').classList.remove('show');
-    }
-
-    function nopBai() {
-      const hoten = document.getElementById('hoten').value.trim();
-      const sdt = document.getElementById('sdt').value.trim();
-
-      if (!hoten) {
-        alert('Vui lòng nhập Họ và tên trước khi nộp bài!');
-        document.getElementById('hoten').focus();
-        return;
-      }
-
-      const btn = document.getElementById('btnSubmit');
-      btn.disabled = true;
-      showLoading();   // Hiện loading
-
-      const questions = document.querySelectorAll('.question');
-      let answers = [];
-
-      questions.forEach((q) => {
-        const selected = q.querySelector('input[type="radio"]:checked');
-        let userAnswer = selected ? selected.value : "Chưa chọn";
-        answers.push(userAnswer);
-      });
-
-      const data = {
-        hoten: hoten,
-        sdt: sdt,
-        answers: answers
-      };
-
-      fetch(SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "text/plain;charset=utf-8" }
-      })
-      .then(res => res.json())
-      .then(res => {
-        hideLoading();
-        if (res.status === "success") {
-          const params = new URLSearchParams({
-            hoten: hoten,
-            sdt: sdt,
-            diem: res.diem,
-            dung: res.dung
-          });
-          window.location.href = "result.html?" + params.toString();
-        } else {
-          alert("Có lỗi xảy ra: " + (res.message || "Không xác định"));
-          btn.disabled = false;
-        }
-      })
-      .catch(err => {
-        console.error(err);
-        hideLoading();
-        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!");
-        btn.disabled = false;
-      });
+    if (diemSo >= 70) {
+      statusEl.textContent = "Đạt yêu cầu";
+      statusEl.classList.add("pass");
+    } else {
+      statusEl.textContent = "Chưa đạt yêu cầu";
+      statusEl.classList.add("fail");
     }
   </script>
 </body>
