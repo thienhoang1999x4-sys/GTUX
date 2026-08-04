@@ -1,177 +1,152 @@
-<!DOCTYPE html>
-<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Làm bài trắc nghiệm</title>
-  
-  <!-- CSS cho hiệu ứng hoa rơi (phải đặt trong thẻ style) -->
-  <style>
-    .flower {
-      position: fixed;
-      top: -50px;
-      z-index: 9999;
-      pointer-events: none;
-      animation: fall linear infinite;
-      opacity: 0.8;
-      font-size: 18px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.9;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0.3;
-      }
-    }
-  </style>
+<title>Bài thi trắc nghiệm</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eef1f8;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    min-height:100vh;
+    padding:40px 20px;
+}
+
+.wrapper{
+    width:100%;
+    max-width:900px;
+}
+
+.header{
+    background:#fff;
+    border-radius:12px;
+    padding:35px;
+    margin-bottom:25px;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+    border-top:8px solid #5E35B1;
+}
+
+.header h1{
+    font-size:42px;
+    line-height:1.3;
+    font-weight:bold;
+}
+
+.question{
+    background:#fff;
+    border-radius:12px;
+    padding:30px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.question-title{
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:22px;
+}
+
+.option{
+    display:flex;
+    align-items:flex-start;
+    margin:18px 0;
+}
+
+.option input{
+    margin-right:16px;
+    margin-top:5px;
+    transform:scale(1.5);
+}
+
+.option label{
+    font-size:23px;
+    line-height:1.7;
+    cursor:pointer;
+}
+
+.form-info{
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.form-info input{
+    width:100%;
+    font-size:22px;
+    padding:18px;
+    margin-bottom:20px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+button{
+    width:100%;
+    padding:18px;
+    font-size:24px;
+    background:#1565c0;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+@media(max-width:768px){
+
+.header h1{
+    font-size:30px;
+}
+
+.question-title{
+    font-size:22px;
+}
+
+.option label{
+    font-size:18px;
+}
+
+button{
+    font-size:20px;
+}
+
+}
+
+.flower{
+    position:fixed;
+    top:-50px;
+    z-index:9999;
+    pointer-events:none;
+    animation:fall linear infinite;
+    opacity:.8;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(0) rotate(0);
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:.3;
+}
+
+}
+
+</style>
+
 </head>
-<body>
-
-  <!-- Phần hiển thị câu hỏi -->
-  <div id="question-container"></div>
-  
-  <!-- Form nhập thông tin & nút nộp bài (Ví dụ minh họa, bạn giữ nguyên form của bạn) -->
-  <div>
-    <input type="text" id="hoten" placeholder="Nhập họ tên...">
-    <input type="text" id="sdt" placeholder="Nhập số điện thoại...">
-    <button id="btnSubmit" onclick="nopBai()">Nộp bài</button>
-  </div>
-
-  <script src="questions.js"></script>
-
-  <!-- JavaScript xử lý logic trắc nghiệm và hiệu ứng hoa rơi -->
-  <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
-
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
-
-    function renderQuestions() {
-      const container = document.getElementById('question-container');
-      const shuffled = shuffle([...questionsData]);
-
-      shuffled.forEach((q, index) => {
-        const qDiv = document.createElement('div');
-        qDiv.className = 'question';
-        qDiv.setAttribute('data-correct', q.correct);
-
-        let optionsHtml = q.options.map((opt) => {
-          const value = opt.charAt(0);
-          const id = `q${index}_${value}`;
-          return `
-            <div class="option">
-              <input type="radio" name="q${index}" value="${value}" id="${id}">
-              <label for="${id}">${opt}</label>
-            </div>
-          `;
-        }).join('');
-
-        qDiv.innerHTML = `
-          <div class="question-title">${index + 1}. ${q.title}</div>
-          <div class="options">${optionsHtml}</div>
-        `;
-        container.appendChild(qDiv);
-      });
-    }
-
-    renderQuestions();
-
-    function nopBai() {
-      const hoten = document.getElementById('hoten').value.trim();
-      const sdt = document.getElementById('sdt').value.trim();
-
-      if (!hoten) {
-        alert('Vui lòng nhập Họ và tên trước khi nộp bài!');
-        document.getElementById('hoten').focus();
-        return;
-      }
-
-      const btn = document.getElementById('btnSubmit');
-      btn.disabled = true;
-      btn.innerText = "Đang nộp bài...";
-
-      const questions = document.querySelectorAll('.question');
-      let soCauDung = 0;
-      let answers = [];
-
-      questions.forEach((q, index) => {
-        const correct = q.getAttribute('data-correct');
-        const selected = q.querySelector('input[type="radio"]:checked');
-        let userAnswer = selected ? selected.value : "Chưa chọn";
-        answers.push(`C${index + 1}:${userAnswer}`);
-
-        if (selected && selected.value === correct) {
-          soCauDung++;
-        }
-      });
-
-      const diemSo = soCauDung * 5;
-
-      const data = {
-        hoten: hoten,
-        sdt: sdt,
-        diem: diemSo,
-        dung: soCauDung,
-        answers: answers.join(" | ")
-      };
-
-      fetch(SCRIPT_URL, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "text/plain;charset=utf-8" }
-      })
-      .then(res => res.json())
-      .then(res => {
-        const params = new URLSearchParams({
-          hoten: hoten,
-          sdt: sdt,
-          diem: diemSo,
-          dung: soCauDung
-        });
-        window.location.href = "result.html?" + params.toString();
-      })
-      .catch(err => {
-        console.error(err);
-        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!");
-        btn.disabled = false;
-        btn.innerText = "Nộp bài";
-      });
-    }
-
-    // ===== Hiệu ứng hoa rơi =====
-    function createFlower() {
-      const flower = document.createElement('div');
-      flower.classList.add('flower');
-      
-      const flowers = ['🌸', '🌺', '🌼', '💮', '🏵️', '🌷'];
-      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
-      
-      flower.style.left = Math.random() * 100 + 'vw';
-      flower.style.fontSize = (Math.random() * 12 + 14) + 'px';
-      flower.style.animationDuration = (Math.random() * 4 + 4) + 's';
-      flower.style.animationDelay = Math.random() * 2 + 's';
-      
-      document.body.appendChild(flower);
-      
-      setTimeout(() => {
-        flower.remove();
-      }, 8000);
-    }
-
-    setInterval(createFlower, 350);
-
-    for (let i = 0; i < 8; i++) {
-      setTimeout(createFlower, i * 200);
-    }
-  </script>
-</body>
-</html>
