@@ -1,91 +1,273 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kết quả bài thi</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Times New Roman", Times, serif;
-      background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    .result-box {
-      background: white;
-      padding: 50px 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 500px;
-      width: 100%;
-    }
-    h1 {
-      font-size: 22px;
-      color: #1565c0;
-      margin-bottom: 10px;
-    }
-    .hospital {
-      font-size: 15px;
-      color: #666;
-      margin-bottom: 30px;
-    }
-    .score {
-      font-size: 48px;
-      font-weight: bold;
-      color: #1565c0;
-      margin: 20px 0;
-    }
-    .info {
-      font-size: 17px;
-      margin-bottom: 8px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 30px;
-      background: #0066cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background: #0052a3;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kết quả bài thi</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#eef1f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:30px;
+}
+
+.result-box{
+
+    width:100%;
+    max-width:700px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.12);
+
+    overflow:hidden;
+
+}
+
+.header{
+
+    background:#673ab7;
+    color:#fff;
+    text-align:center;
+    padding:35px;
+
+}
+
+.header h1{
+
+    font-size:38px;
+    margin-bottom:10px;
+
+}
+
+.header p{
+
+    font-size:20px;
+    opacity:.95;
+
+}
+
+.content{
+
+    padding:40px;
+
+}
+
+.info{
+
+    font-size:24px;
+    margin-bottom:18px;
+    color:#333;
+
+}
+
+.score{
+
+    text-align:center;
+    margin:40px 0;
+
+}
+
+.score-value{
+
+    font-size:80px;
+    font-weight:bold;
+    color:#1565c0;
+
+}
+
+.score-text{
+
+    font-size:28px;
+    margin-top:10px;
+
+}
+
+.correct{
+
+    text-align:center;
+    font-size:26px;
+    margin-bottom:40px;
+
+}
+
+.btn{
+
+    display:block;
+
+    width:100%;
+
+    background:#1565c0;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#0d47a1;
+
+}
+
+.footer{
+
+    margin-top:25px;
+    text-align:center;
+    color:#888;
+    font-size:16px;
+
+}
+
+@media(max-width:768px){
+
+.header h1{
+
+font-size:28px;
+
+}
+
+.header p{
+
+font-size:17px;
+
+}
+
+.content{
+
+padding:25px;
+
+}
+
+.info{
+
+font-size:18px;
+
+}
+
+.score-value{
+
+font-size:56px;
+
+}
+
+.score-text{
+
+font-size:22px;
+
+}
+
+.correct{
+
+font-size:20px;
+
+}
+
+.btn{
+
+font-size:20px;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <div class="result-box">
-    <div class="hospital">BỆNH VIỆN MẮT QUỐC TẾ CUNG HỒNG SƠN</div>
-    <h1>KẾT QUẢ BÀI THI</h1>
 
-    <div class="info" id="hoten"></div>
-    <div class="info" id="sdt"></div>
+<div class="result-box">
 
-    <div class="score" id="diem"></div>
-    <div class="info" id="dung"></div>
+    <div class="header">
 
-    <a href="index.html" class="btn">Làm lại bài thi</a>
-  </div>
+        <h1>KẾT QUẢ BÀI THI</h1>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const hoten = params.get('hoten') || '';
-    const sdt = params.get('sdt') || '';
-    const diem = params.get('diem') || '0';
-    const dung = params.get('dung') || '0';
+        <p>BỆNH VIỆN MẮT QUỐC TẾ CUNG HỒNG SƠN</p>
 
-    document.getElementById('hoten').innerText = "Họ và tên: " + hoten;
-    if (sdt) {
-      document.getElementById('sdt').innerText = "Số điện thoại: " + sdt;
-    }
-    document.getElementById('diem').innerText = diem + " / 100";
-    document.getElementById('dung').innerText = "Số câu đúng: " + dung + " / 20";
-  </script>
+    </div>
+
+    <div class="content">
+
+        <div class="info" id="hoten"></div>
+
+        <div class="info" id="sdt"></div>
+
+        <div class="score">
+
+            <div class="score-value" id="diem"></div>
+
+            <div class="score-text">Điểm đạt được</div>
+
+        </div>
+
+        <div class="correct" id="dung"></div>
+
+        <a href="index.html" class="btn">
+            Làm lại bài thi
+        </a>
+
+        <div class="footer">
+            Chúc bạn học tập hiệu quả và hoàn thành tốt bài kiểm tra.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const params=new URLSearchParams(window.location.search);
+
+const hoten=params.get("hoten")||"";
+
+const sdt=params.get("sdt")||"";
+
+const diem=params.get("diem")||"0";
+
+const dung=params.get("dung")||"0";
+
+document.getElementById("hoten").innerHTML="<b>Họ và tên:</b> "+hoten;
+
+if(sdt){
+
+document.getElementById("sdt").innerHTML="<b>Số điện thoại:</b> "+sdt;
+
+}
+
+document.getElementById("diem").innerHTML=diem+"/100";
+
+document.getElementById("dung").innerHTML="✔ Trả lời đúng "+dung+" / 20 câu";
+
+</script>
+
 </body>
 </html>
