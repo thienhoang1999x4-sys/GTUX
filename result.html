@@ -30,10 +30,11 @@
       margin-bottom: 10px;
     }
     .hospital {
-      font-size: 60px;
-      color: #ff1493;
+      font-size: 72px;
+      color: #ff8fab;
       margin-bottom: 30px;
       font-weight: bold;
+      line-height: 1.2;
     }
     .score {
       font-size: 48px;
@@ -73,7 +74,7 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const hoten = params.get('hoten') || '';
-    const chucdanh = params.get('sdt') || '';   // lấy từ key "sdt" (vì index.html đang gửi key này)
+    const chucdanh = params.get('sdt') || '';
     const diem = params.get('diem') || '0';
     const dung = params.get('dung') || '0';
 
