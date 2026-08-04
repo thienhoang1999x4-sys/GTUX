@@ -32,11 +32,11 @@
     }
     .header-card h1 {
       font-size: 28px;
-      font-weight: 700;          /* Đậm */
+      font-weight: 700;
       color: #202124;
       margin-bottom: 8px;
       line-height: 1.3;
-      text-align: center;        /* Căn giữa */
+      text-align: center;
     }
     .header-card .desc {
       font-size: 14px;
@@ -182,11 +182,11 @@
       </div>
       <div class="info-row">
         <label for="cd">Chức Danh</label>
-        <input type="tel" id="cd" placeholder="Câu trả lời của bạn">
+        <input type="text" id="cd" placeholder="Câu trả lời của bạn">
       </div>
     </div>
 
-    <!-- Câu hỏi sẽ được render ở đây -->
+    <!-- Câu hỏi -->
     <div id="question-container"></div>
 
     <button type="button" class="btn-submit" id="btnSubmit" onclick="nopBai()">Gửi</button>
@@ -198,7 +198,9 @@
 
   <script src="questions.js"></script>
   <script>
+    // ====== THAY URL APPS SCRIPT CỦA BẠN VÀO ĐÂY ======
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
+    // ==================================================
 
     function shuffle(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -280,10 +282,21 @@
       fetch(SCRIPT_URL, {
         method: "POST",
         body: JSON.stringify(data),
-        headers: { "Content-Type": "text/plain;charset=utf-8" }
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        mode: "cors",
+        redirect: "follow"
       })
-      .then(res => res.json())
       .then(res => {
+        if (!res.ok) {
+          throw new Error("HTTP error " + res.status);
+        }
+        return res.json();
+      })
+      .then(res => {
+        console.log("Phản hồi từ Apps Script:", res);
+
         const params = new URLSearchParams({
           hoten: hoten,
           cd: cd,
@@ -293,8 +306,8 @@
         window.location.href = "result.html?" + params.toString();
       })
       .catch(err => {
-        console.error(err);
-        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!");
+        console.error("Lỗi gửi dữ liệu:", err);
+        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!\nChi tiết: " + err.message);
         btn.disabled = false;
         btn.innerText = "Gửi";
       });
