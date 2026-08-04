@@ -30,8 +30,8 @@
       margin-bottom: 10px;
     }
     .hospital {
-      font-size: 20px;
-      color: #8b0000;
+      font-size: 24px;
+      color: #ff8fab;
       margin-bottom: 30px;
       font-weight: bold;
       line-height: 1.2;
@@ -66,7 +66,6 @@
     <div class="hospital">BỆNH VIỆN MẮT QUỐC TẾ CUNG HỒNG SƠN</div>
     <h1>KẾT QUẢ BÀI THI</h1>
     <div class="info" id="hoten"></div>
-    <div class="info" id="chucdanh"></div>
     <div class="score" id="diem"></div>
     <div class="info" id="dung"></div>
     <a href="index.html" class="btn">Làm lại bài thi</a>
@@ -74,16 +73,10 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const hoten = params.get('hoten') || '';
-    const chucdanh = params.get('sdt') || '';
     const diem = params.get('diem') || '0';
     const dung = params.get('dung') || '0';
 
     document.getElementById('hoten').innerText = "Họ và tên: " + hoten;
-    
-    if (chucdanh) {
-      document.getElementById('chucdanh').innerText = "Chức danh: " + chucdanh;
-    }
-    
     document.getElementById('diem').innerText = diem + " / 100";
     document.getElementById('dung').innerText = "Số câu đúng: " + dung + " / 20";
   </script>
