@@ -37,10 +37,6 @@
       line-height: 1.3;
       text-align: center;
     }
-    .header-card .desc {
-      font-size: 14px;
-      color: #5f6368;
-    }
     .info-card {
       background: white;
       border-radius: 8px;
@@ -156,21 +152,16 @@
       }
       .header-card h1 {
         font-size: 22px;
-        font-weight: 700;
-        text-align: center;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
     <div class="header-card">
       <h1>BÀI THI TRẮC NGHIỆM VỀ GIAO TIẾP, ỨNG XỬ CỦA NHÂN VIÊN Y TẾ NĂM 2026 THÁNG 8</h1>
-      <div class="desc"></div>
     </div>
 
-    <!-- Thông tin thí sinh -->
     <div class="info-card">
       <div class="info-row">
         <label for="hoten">Họ và tên <span style="color:#d93025">*</span></label>
@@ -178,7 +169,6 @@
       </div>
     </div>
 
-    <!-- Câu hỏi -->
     <div id="question-container"></div>
 
     <button type="button" class="btn-submit" id="btnSubmit" onclick="nopBai()">Gửi</button>
@@ -190,6 +180,7 @@
 
   <script src="questions.js"></script>
   <script>
+    // ===== THAY URL MỚI SAU KHI DEPLOY =====
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHQlRT2CCgQQf3J_LuacmAVRWsZZd8vSMHvzHoKw0f1r9EWmexaqUY4H5ginuc63TL/exec";
 
     function shuffle(array) {
@@ -232,7 +223,6 @@
 
     function nopBai() {
       const hoten = document.getElementById('hoten').value.trim();
-
       if (!hoten) {
         alert('Vui lòng nhập Họ và tên trước khi nộp bài!');
         document.getElementById('hoten').focus();
@@ -269,9 +259,14 @@
       fetch(SCRIPT_URL, {
         method: "POST",
         body: JSON.stringify(data),
-        headers: { "Content-Type": "text/plain;charset=utf-8" }
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        }
       })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
       .then(res => {
         const params = new URLSearchParams({
           hoten: hoten,
@@ -282,7 +277,7 @@
       })
       .catch(err => {
         console.error(err);
-        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!");
+        alert("Gửi dữ liệu thất bại. Vui lòng thử lại!\n\nChi tiết: " + err.message);
         btn.disabled = false;
         btn.innerText = "Gửi";
       });
