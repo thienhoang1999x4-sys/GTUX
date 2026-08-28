@@ -1,202 +1,202 @@
 const questionsData = [
   {
-    correct: "A",
-    title: "Nguyên nhân chính khiến người bệnh dễ bức xúc khi chờ đợi là:",
+    correct: "C",
+    title: "Bạn phát hiện đồng nghiệp trả lời người bệnh với thái độ chưa phù hợp. Bạn nên:",
     options: [
-      "A. Không được biết lý do và thời gian chờ.",
-      "B. Bệnh viện quá đông.",
-      "C. Chi phí điều trị cao.",
-      "D. Thời tiết nóng."
+      "Phê bình trước mặt người bệnh.",
+      "Im lặng.",
+      "Góp ý riêng với đồng nghiệp sau khi công việc ổn định.",
+      "Báo ngay lên Ban Giám đốc."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Người bệnh chờ hơn 30 phút và bắt đầu lớn tiếng tại quầy tiếp đón. NVYT nên:",
+    options: [
+      "Yêu cầu người bệnh giữ trật tự.",
+      "Giải thích ngắn gọn rồi tiếp tục làm việc.",
+      "Bình tĩnh xin lỗi, giải thích nguyên nhân và thông báo thời gian dự kiến.",
+      "Mời bảo vệ xử lý."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Một người bệnh lớn tuổi không nghe rõ hướng dẫn dùng thuốc. Bạn nên:",
+    options: [
+      "Nói nhanh hơn.",
+      "Nhờ người khác giải thích.",
+      "Nói chậm, rõ ràng và kiểm tra lại đến khi người bệnh đã hiểu mới thôi.",
+      "Ghi vào giấy rồi bỏ đi."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Người nhà liên tục hỏi: \"Bao giờ đến lượt?\" trong khi bạn chưa biết chính xác thời gian. Bạn nên:",
+    options: [
+      "Nói \"không biết\".",
+      "Im lặng.",
+      "Giải thích tình hình và hẹn cập nhật khi có thông tin.",
+      "Đề nghị hỏi nơi khác."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Người bệnh phàn nàn vì đã lấy máu xét nghiệm rồi mà phải làm lại xét nghiệm. Cách ứng xử phù hợp là:",
+    options: [
+      "Nói do máy hỏng.",
+      "Đổ lỗi cho đồng nghiệp.",
+      "Giải thích lý do chuyên môn và xin lỗi vì sự bất tiện.",
+      "Yêu cầu người bệnh hợp tác."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Người bệnh đang bức xúc và nói rất to. Bạn nên:",
+    options: [
+      "Tranh luận.",
+      "Nói to hơn.",
+      "Bình tĩnh lắng nghe, không ngắt lời và giải thích.",
+      "Bỏ đi."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Sau khi giải thích, người bệnh vẫn chưa hiểu. Bạn nên:",
+    options: [
+      "Nói lại nguyên văn.",
+      "Chuyển sang thuật ngữ chuyên môn.",
+      "Giải thích bằng ví dụ đơn giản hơn.",
+      "Kết thúc cuộc trao đổi."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Trong giờ cao điểm, đồng nghiệp nhờ hỗ trợ tiếp đón người bệnh. Bạn nên:",
+    options: [
+      "Từ chối.",
+      "Chỉ hỗ trợ khi lãnh đạo yêu cầu.",
+      "Chủ động hỗ trợ trong khả năng để giảm thời gian chờ.",
+      "Bỏ công việc của mình để sang hỗ trợ cho bạn."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Một người bệnh quay video tại khu vực tiếp đón vì cho rằng chờ quá lâu. Bạn nên:",
+    options: [
+      "Giằng điện thoại.",
+      "Yêu cầu xóa video.",
+      "Bình tĩnh trao đổi, giải thích và mời đến khu vực phù hợp để giải quyết.",
+      "Bỏ mặc."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Người bệnh muốn gặp bác sĩ ngay khi bác sĩ đang cấp cứu. Bạn nên:",
+    options: [
+      "Từ chối.",
+      "Để người bệnh tự chờ.",
+      "Giải thích lý do và thông báo thời gian dự kiến.",
+      "Không trả lời."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Khi đang giải thích tình trạng bệnh cho một bệnh nhân lớn tuổi bị lãng tai, người bệnh liên tục hỏi lại những điều bạn vừa nói. Thái độ đúng mực nhất là:",
+    options: [
+      "Thể hiện sự khó chịu, nhăn mặt và nói nhanh cho xong.",
+      "Gọi người nhà vào nghe thay, không nói chuyện với người bệnh nữa.",
+      "Kiên nhẫn, nói to, chậm rãi, rõ ràng từng ý, có thể kết hợp viết ra giấy nếu cần thiết.",
+      "Nói đùa cợt rằng bác lãng tai quá để không khí bớt căng thẳng."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Trong khi hướng dẫn, người bệnh liên tục cắt lời. Bạn nên:",
+    options: [
+      "Tỏ thái độ khó chịu.",
+      "Dừng hướng dẫn.",
+      "Bình tĩnh lắng nghe rồi tiếp tục giải thích.",
+      "Mời người khác."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Bạn vô tình nói hơi lớn tiếng với người bệnh vì áp lực công việc. Sau đó nên:",
+    options: [
+      "Coi như không có chuyện gì.",
+      "Giải thích mình bận.",
+      "Chủ động xin lỗi và điều chỉnh thái độ.",
+      "Tránh gặp lại."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Bệnh án điện tử bị lỗi, người bệnh phải chờ lâu. Bạn nên:",
+    options: [
+      "Để người bệnh tiếp tục chờ.",
+      "Đổ lỗi cho phần mềm.",
+      "Xin lỗi, giải thích nguyên nhân và cập nhật tiến độ xử lý.",
+      "Bảo người bệnh về."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Bệnh nhân A đến khám vào giờ cao điểm, phòng khám đang rất đông. Bệnh nhân phàn nàn và lớn tiếng vì phải chờ hơn 1 tiếng rưỡi. Bạn là điều dưỡng phòng khám, bạn sẽ xử lý thế nào?",
+    options: [
+      "Lờ đi vì đang bận, coi như không nghe thấy.",
+      "Lớn tiếng yêu cầu bệnh nhân giữ trật tự để người khác còn làm việc.",
+      "Dừng tay, mỉm cười, xin lỗi vì sự chờ đợi, giải thích nhẹ nhàng về tình trạng đông bệnh nhân và kiểm tra lại số thứ tự giúp họ.",
+      "Nói bệnh nhân nếu không chờ được thì có thể sang bệnh viện khác khám."
     ]
   },
   {
     correct: "B",
-    title: "Việc xin lỗi người bệnh khi có sự chậm trễ thể hiện:",
+    title: "Khi thực hiện thủ thuật cho bệnh nhi, bé khóc thét và người mẹ tỏ ra rất xót con, có lời lẽ gay gắt với bạn vì \"bạn làm đau nên con khóc\". Cách ứng xử chuẩn mực là:",
     options: [
-      "A. Nhận lỗi hoàn toàn.",
-      "B. Sự tôn trọng và đồng cảm.",
-      "C. Thừa nhận sai sót chuyên môn.",
-      "D. Làm giảm uy tín bệnh viện."
+      "Trách người mẹ không hiểu đã có lời nói gay gắt với bạn.",
+      "Dừng lại, đồng cảm với tâm lý xót con của người mẹ, nhẹ nhàng giải thích và hướng dẫn mẹ cách dỗ dành, giữ bé để thao tác an toàn nhất.",
+      "Mời người mẹ ra khỏi phòng ngay lập tức.",
+      "Bảo người mẹ dỗ con khi nào con nín thì làm tiếp."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Lãnh đạo khoa phân công cho bạn một nhiệm vụ đột xuất mà bạn chưa từng có kinh nghiệm xử lý, lo sợ sẽ xảy ra sai sót. Bạn nên làm gì?",
+    options: [
+      "Nhận lời ngay lập tức nhưng sau đó nhờ đồng nghiệp khác làm hộ.",
+      "Thẳng thừng từ chối vì đó không phải việc của mình.",
+      "Cảm ơn sự tin tưởng của lãnh đạo, nhưng khéo léo trình bày những hạn chế của bản thân và xin được hướng dẫn hoặc phối hợp cùng người có kinh nghiệm.",
+      "Báo cáo vượt cấp lên Ban Giám đốc viện về việc trưởng khoa phân công sai."
     ]
   },
   {
     correct: "B",
     title: "Việc lắng nghe chủ động mang lại lợi ích lớn nhất là:",
     options: [
-      "A. Rút ngắn cuộc trò chuyện.",
-      "B. Giúp người bệnh cảm thấy được tôn trọng.",
-      "C. Giảm số lượng hồ sơ.",
-      "D. Tăng tốc độ khám bệnh."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Khi người bệnh chưa hiểu hướng dẫn điều trị, NVYT nên:",
-    options: [
-      "A. Nhắc lại đúng nội dung.",
-      "B. Giải thích bằng ngôn ngữ dễ hiểu.",
-      "C. Yêu cầu người nhà tự giải thích.",
-      "D. Chuyển sang người khác."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Việc gọi người bệnh bằng \"ông, bà, anh, chị...\" nhằm:",
-    options: [
-      "A. Phân biệt tuổi.",
-      "B. Thể hiện sự tôn trọng người bệnh.",
-      "C. Tiện xưng hô.",
-      "D. Theo thói quen."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Việc giữ bí mật thông tin người bệnh nhằm:",
-    options: [
-      "A. Tránh mất thời gian.",
-      "B. Bảo vệ quyền riêng tư của người bệnh.",
-      "C. Giảm tranh chấp.",
-      "D. Thuận tiện quản lý hồ sơ."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Khi đồng nghiệp đang bận, cách hỗ trợ phù hợp là:",
-    options: [
-      "A. Chờ được nhờ mới giúp.",
-      "B. Chủ động hỗ trợ trong khả năng.",
-      "C. Để họ tự giải quyết.",
-      "D. Báo lãnh đạo."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Trao đổi góp ý với đồng nghiệp nên thực hiện:",
-    options: [
-      "A. Trước đông người.",
-      "B. Riêng tư, mang tính xây dựng.",
-      "C. Qua mạng xã hội.",
-      "D. Trước mặt người bệnh."
-    ]
-  },
-  {
-    correct: "A",
-    title: "Điều gì giúp hạn chế khiếu nại của người bệnh?",
-    options: [
-      "A. Giải thích rõ ràng và kịp thời.",
-      "B. Tránh tiếp xúc.",
-      "C. Chỉ trả lời khi bị hỏi.",
-      "D. Chuyển trách nhiệm."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Một lời xin lỗi đúng lúc có ý nghĩa:",
-    options: [
-      "A. Làm giảm giá trị chuyên môn.",
-      "B. Giảm căng thẳng trong giao tiếp.",
-      "C. Thừa nhận sai hoàn toàn.",
-      "D. Không cần thiết."
-    ]
-  },
-  {
-    correct: "A",
-    title: "Ý nghĩa lớn nhất của giao tiếp ứng xử chuẩn mực trong bệnh viện là:",
-    options: [
-      "A. Tạo hình ảnh chuyên nghiệp và nâng cao chất lượng dịch vụ.",
-      "B. Giảm chi phí hoạt động.",
-      "C. Tăng số lượng nhân viên.",
-      "D. Hoàn thành chỉ tiêu thi đua."
+      "Rút ngắn cuộc trò chuyện.",
+      "Giúp người bệnh cảm thấy được tôn trọng.",
+      "Giảm số lượng hồ sơ.",
+      "Tăng tốc độ khám bệnh."
     ]
   },
   {
     correct: "C",
-    title: "Trong khi làm thủ thuật, người bệnh liên tục hỏi nhiều câu. Bạn nên:",
+    title: "Khi bạn có ý kiến đóng góp nhằm cải tiến quy trình khám bệnh tại khoa nhưng trái ngược với quan điểm của Trưởng khoa, cách giao tiếp phù hợp nhất là:",
     options: [
-      "A. Yêu cầu giữ im lặng.",
-      "B. Trả lời sau khi làm thủ thuật xong.",
-      "C. Vừa thực hiện an toàn vừa giải thích ngắn gọn, trấn an người bệnh.",
-      "D. Nhờ người nhà trả lời."
+      "Cãi tay đôi với Trưởng khoa trong cuộc họp giao ban buổi sáng.",
+      "Viết bài ẩn danh lên mạng xã hội của bệnh viện để phản đối.",
+      "Đề đạt ý kiến một cách có cơ sở, dữ liệu cụ thể trong các cuộc họp chuyên môn hoặc gặp riêng để trao đổi trên tinh thần xây dựng.",
+      "Im lặng, chấp nhận làm theo quy trình cũ dù biết nó không hiệu quả."
     ]
   },
   {
-    correct: "C",
-    title: "Người bệnh hỏi về tình trạng của bệnh nhân khác cùng phòng. Bạn nên:",
+    correct: "D",
+    title: "Bệnh nhân gửi tin nhắn qua Fanpage của bệnh viện bày tỏ thái độ rất tiêu cực và sử dụng từ ngữ xúc phạm về trải nghiệm khám bệnh hôm nay. Người trực Fanpage nên:",
     options: [
-      "A. Trả lời đầy đủ.",
-      "B. Chỉ nói sơ qua.",
-      "C. Từ chối khéo vì liên quan đến bảo mật thông tin.",
-      "D. Nhờ người nhà trả lời."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Người bệnh phát hiện bị gọi nhầm tên và tỏ ra khó chịu. Bạn nên:",
-    options: [
-      "A. Nói \"không sao\".",
-      "B. Đổ lỗi cho phần mềm.",
-      "C. Xin lỗi và xác minh lại thông tin.",
-      "D. Tiếp tục gọi người khác."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Một đồng nghiệp đang căng thẳng và nói chuyện thiếu kiềm chế với bạn. Bạn nên:",
-    options: [
-      "A. Đáp trả.",
-      "B. Báo lãnh đạo ngay.",
-      "C. Giữ bình tĩnh, trao đổi khi cả hai ổn định.",
-      "D. Không hợp tác."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Người bệnh liên tục chửi bới và xúc phạm cá nhân NVYT. Bạn nên:",
-    options: [
-      "A. Chửi lại.",
-      "B. Bỏ vị trí làm việc.",
-      "C. Giữ bình tĩnh, không đáp trả, tập trung giải quyết vấn đề và báo người quản lý khi cần.",
-      "D. Quay video đăng mạng xã hội."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Người bệnh quay video và liên tục chất vấn nhân viên. Bạn nên:",
-    options: [
-      "A. Tắt camera.",
-      "B. Không trả lời.",
-      "C. Bình tĩnh trả lời trong phạm vi chuyên môn và mời trao đổi tại khu vực phù hợp.",
-      "D. Rời khỏi vị trí."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Bạn vô tình nghe thấy hai đồng nghiệp đang nói xấu một người khác trong khoa tại phòng thay đồ. Bạn nên:",
-    options: [
-      "A. Tham gia vào câu chuyện để hòa đồng.",
-      "B. Ghi âm lại và gửi cho người bị nói xấu.",
-      "C. Nhắc nhở khéo léo rằng đây không phải là nơi thích hợp để bàn luận chuyện cá nhân, hướng họ tập trung vào công việc.",
-      "D. Lên tiếng mắng chửi hai người đó là những kẻ đưa chuyện."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Mục tiêu chính của giao tiếp hiệu quả tại quầy thu ngân y tế là gì?",
-    options: [
-      "A. Thu được tiền nhanh nhất có thể.",
-      "B. Tạo ấn tượng tốt về tác phong cá nhân.",
-      "C. Đảm bảo giao dịch chính xác, hiệu quả và mang lại trải nghiệm tích cực, sự hài lòng cho bệnh nhân/người nhà.",
-      "D. Hoàn thành công việc được giao."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Khi phải từ chối một yêu cầu không hợp lý của bệnh nhân (ví dụ: đòi giảm giá không đúng quy định), bạn nên:",
-    options: [
-      "A. Đồng ý để tránh phiền phức.",
-      "B. Từ chối thẳng thừng mà không cần giải thích.",
-      "C. Lịch sự giải thích lý do từ chối dựa trên quy định của cơ sở y tế, thể hiện sự thông cảm và đề xuất giải pháp khác nếu có.",
-      "D. Tỏ thái độ."
+      "Chặn (Block) tài khoản của bệnh nhân ngay lập tức.",
+      "Trả lời bằng thái độ thách thức, yêu cầu bệnh nhân có bằng chứng mới được nói.",
+      "Xóa bình luận, tin nhắn để lãnh đạo không thấy.",
+      "Phản hồi nhanh chóng, thể hiện sự thấu cảm, xin lỗi về những trải nghiệm không tốt và xin số điện thoại để trực tiếp lắng nghe, xử lý sự việc (offline)."
     ]
   }
 ];
