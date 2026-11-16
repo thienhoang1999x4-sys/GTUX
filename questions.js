@@ -1,202 +1,202 @@
 const questionsData = [
   {
-    correct: "A",
-    title: "Trong giao tiếp, thái độ nhẹ nhàng giúp:",
+    correct: "B",
+    title: "Khi người bệnh đến khám, nhân viên y tế nên làm gì đầu tiên?",
     options: [
-      "A. Người bệnh dễ hợp tác hơn.",
-      "B. Giảm chi phí điều trị.",
-      "C. Giảm số lượng bệnh nhân.",
-      "D. Tăng doanh thu."
+      "A. Yêu cầu người bệnh lấy số thứ tự.",
+      "B. Chào hỏi, hướng dẫn người bệnh với thái độ thân thiện.",
+      "C. Tiếp tục làm việc riêng.",
+      "D. Yêu cầu người bệnh tự tìm phòng khám."
+    ]
+  },
+  {
+    correct: "C",
+    title: "Khi người bệnh lo lắng trước phẫu thuật NVYT nên làm gì?",
+    options: [
+      "A. Nói rằng không có gì phải lo lắng.",
+      "B. Yêu cầu người bệnh không được hỏi nhiều.",
+      "C. Lắng nghe, động viên và giải thích trong phạm vi chuyên môn.",
+      "D. Đề nghị người bệnh tự hỏi bác sĩ."
+    ]
+  },
+  {
+    correct: "D",
+    title: "Khi người bệnh hỏi về nguy cơ của phẫu thuật, nhân viên y tế nên làm gì?",
+    options: [
+      "A. Khẳng định phẫu thuật chắc chắn thành công.",
+      "B. Né tránh câu hỏi.",
+      "C. Tự đưa ra những cam kết ngoài chuyên môn.",
+      "D. Giải thích trong phạm vi chuyên môn và hướng dẫn hỏi bác sĩ khi cần."
     ]
   },
   {
     correct: "B",
-    title: "Việc giải thích trước khi làm thủ thuật nhằm:",
+    title: "Khi người bệnh lớn tiếng tại quầy tiếp đón, nhân viên y tế nên làm gì?",
     options: [
-      "A. Đủ thủ tục.",
-      "B. Giúp người bệnh hiểu và phối hợp.",
-      "C. Tiết kiệm thời gian.",
-      "D. Hạn chế ký cam kết."
+      "A. Lớn tiếng yêu cầu người bệnh giữ trật tự.",
+      "B. Bình tĩnh lắng nghe, trao đổi và tìm nguyên nhân bức xúc.",
+      "C. Bỏ mặc người bệnh.",
+      "D. Đe dọa mời bảo vệ ngay trong mọi trường hợp."
     ]
   },
   {
-    correct: "A",
-    title: "Khi người bệnh lo lắng, điều họ cần nhất từ NVYT là:",
+    correct: "D",
+    title: "Khi người bệnh xúc phạm nhân viên y tế, cách xử lý phù hợp nhất là gì?",
     options: [
-      "A. Giải thích rõ ràng và động viên.",
-      "B. Kê thêm thuốc.",
-      "C. Khuyên không nên hỏi nhiều.",
-      "D. Chuyển sang bác sĩ khác."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Điều quan trọng nhất khi giao tiếp với người cao tuổi là:",
-    options: [
-      "A. Nói nhanh.",
-      "B. Nói to, rõ ràng và kiên nhẫn.",
-      "C. Chỉ nói với người nhà.",
-      "D. Dùng thuật ngữ chuyên môn."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Một lời cảm ơn chân thành sau khi người bệnh hợp tác sẽ:",
-    options: [
-      "A. Làm kéo dài thời gian giao tiếp.",
-      "B. Tăng sự hài lòng của người bệnh.",
-      "C. Không có ý nghĩa.",
-      "D. Làm người bệnh hiểu nhầm."
-    ]
-  },
-  {
-    correct: "A",
-    title: "Mỉm cười khi đón tiếp người bệnh giúp:",
-    options: [
-      "A. Người bệnh cảm thấy được chào đón.",
-      "B. Rút ngắn thủ tục.",
-      "C. Tăng doanh thu.",
-      "D. Giảm số lượng câu hỏi."
+      "A. Xúc phạm lại để đáp trả.",
+      "B. Im lặng chịu đựng trong mọi tình huống.",
+      "C. Tự ý chấm dứt việc chăm sóc.",
+      "D. Giữ bình tĩnh, đặt giới hạn giao tiếp và báo người có trách nhiệm nếu cần."
     ]
   },
   {
     correct: "A",
-    title: "Trong giao tiếp, việc nhìn vào người đối diện thể hiện:",
+    title: "Khi xảy ra tranh cãi giữa người bệnh và nhân viên y tế, người chứng kiến nên làm gì?",
     options: [
-      "A. Quan tâm và lắng nghe.",
-      "B. Kiểm tra thái độ.",
-      "C. Gây áp lực.",
-      "D. Thể hiện quyền lực."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Điều quan trọng nhất khi giao tiếp qua điện thoại với người bệnh là:",
-    options: [
-      "A. Nói ngắn.",
-      "B. Rõ ràng, lịch sự và xác nhận thông tin.",
-      "C. Kết thúc nhanh.",
-      "D. Chỉ trả lời khi cần."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Khi người bệnh cảm ơn sau điều trị, NVYT nên:",
-    options: [
-      "A. Im lặng.",
-      "B. Đáp lại bằng thái độ thân thiện và chúc sức khỏe.",
-      "C. Chỉ gật đầu.",
-      "D. Tiếp tục làm việc."
+      "A. Bình tĩnh hỗ trợ, lắng nghe các bên và báo người phụ trách khi cần.",
+      "B. Đứng về phía đồng nghiệp mà không tìm hiểu sự việc.",
+      "C. Quay video và đăng lên mạng xã hội.",
+      "D. Tham gia tranh cãi để bảo vệ quan điểm cá nhân."
     ]
   },
   {
     correct: "C",
-    title: "Một bệnh nhân thắc mắc về khoản phí trong hóa đơn thanh toán khi ra viện. Nhân viên thu ngân nên phản hồi như thế nào?",
+    title: "Khi gặp lãnh đạo bệnh viện, nhân viên nên có thái độ như thế nào?",
     options: [
-      "A. \"Hệ thống máy tính tính rồi, không sai được đâu bác.\"",
-      "B. \"Cháu chỉ biết thu tiền, bác thắc mắc lên cấp trên.\"",
-      "C. Mời bệnh nhân ngồi, in chi tiết viện phí và kiên nhẫn đối chiếu, giải thích từng khoản mục cho bệnh nhân hiểu.",
-      "D. Trả lại tiền cho bệnh nhân để khỏi phải giải thích."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Khi bị lãnh đạo phê bình trực tiếp trước mặt các đồng nghiệp vì một sai sót chuyên môn (dù bạn cho rằng nguyên nhân do khách quan), thái độ đúng mực của bạn là:",
-    options: [
-      "A. Tức giận, cãi lại ngay lập tức để bảo vệ danh dự.",
-      "B. Bỏ ra khỏi phòng giao ban.",
-      "C. Bình tĩnh lắng nghe, tiếp thu ý kiến, sau đó tìm thời điểm phù hợp để trình bày lại nguyên nhân khách quan một cách khiêm tốn và cầu thị.",
-      "D. Xin nghỉ việc."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Trong ca làm việc, đồng nghiệp phòng bên cạnh nhờ bạn làm giúp một phần việc của họ vì họ cảm thấy mệt. Bạn đang rảnh tay, bạn sẽ:",
-    options: [
-      "A. Từ chối thẳng thừng vì việc ai người nấy làm.",
-      "B. Sẵn sàng hỗ trợ, chia sẻ công việc trên tinh thần đoàn kết, đồng thời động viên đồng nghiệp nghỉ ngơi.",
-      "C. Làm giúp nhưng đi rêu rao với cả khoa là mình phải gánh vác việc cho người khác.",
-      "D. Báo cáo cấp trên để phân công người khác làm thay."
-    ]
-  },
-  {
-    correct: "B",
-    title: "Vì sao NVYT cần giới thiệu tên và chức danh trước khi thực hiện kỹ thuật?",
-    options: [
-      "A. Để người bệnh nhớ tên nhân viên.",
-      "B. Để tạo sự tin tưởng và hợp tác.",
-      "C. Để hoàn thành quy trình.",
-      "D. Để thuận tiện cho đánh giá thi đua."
+      "A. Thờ ơ, không cần chào hỏi.",
+      "B. Chỉ chào khi lãnh đạo chào trước.",
+      "C. Chào hỏi lễ phép, thái độ nghiêm túc và tôn trọng.",
+      "D. Tránh tiếp xúc để không bị giao việc."
     ]
   },
   {
     correct: "A",
-    title: "Khi người bệnh đặt nhiều câu hỏi, NVYT nên:",
+    title: "Khi lãnh đạo góp ý về công việc, nhân viên nên làm gì?",
     options: [
-      "A. Kiên nhẫn giải thích.",
-      "B. Trả lời ngắn cho xong.",
-      "C. Bỏ qua.",
-      "D. Đề nghị không hỏi nữa."
+      "A. Lắng nghe nghiêm túc, tiếp thu và điều chỉnh phù hợp.",
+      "B. Ngắt lời để giải thích ngay.",
+      "C. Phản ứng khó chịu vì cảm thấy bị phê bình.",
+      "D. Im lặng nhưng không thực hiện nội dung đã thống nhất."
+    ]
+  },
+  {
+    correct: "B",
+    title: "Khi lãnh đạo đang phát biểu hoặc giao nhiệm vụ, nhân viên nên làm gì?",
+    options: [
+      "A. Nói chuyện riêng với đồng nghiệp.",
+      "B. Tập trung lắng nghe, không ngắt lời và ghi lại nội dung cần thiết.",
+      "C. Sử dụng điện thoại cho việc riêng.",
+      "D. Bỏ đi khi chưa nghe xong."
+    ]
+  },
+  {
+    correct: "D",
+    title: "Khi đồng nghiệp mắc lỗi trong công việc, cách ứng xử phù hợp nhất là gì?",
+    options: [
+      "A. Phê bình gay gắt trước tập thể.",
+      "B. Kể lỗi của đồng nghiệp cho nhiều người.",
+      "C. Che giấu lỗi dù có nguy cơ ảnh hưởng người bệnh.",
+      "D. Góp ý trên tinh thần xây dựng và báo cáo theo quy định nếu cần."
     ]
   },
   {
     correct: "A",
-    title: "Người bệnh thường hài lòng hơn khi:",
+    title: "Khi cần nhờ đồng nghiệp hỗ trợ công việc, bạn nên làm gì?",
     options: [
-      "A. Được giải thích đầy đủ dù phải chờ.",
-      "B. Được khám thật nhanh.",
-      "C. Được ưu tiên.",
-      "D. Không phải ký giấy tờ."
+      "A. Đề nghị lịch sự, nói rõ nội dung cần hỗ trợ và cảm ơn.",
+      "B. Ra lệnh cho đồng nghiệp thực hiện.",
+      "C. Cho rằng đồng nghiệp có trách nhiệm phải giúp mình.",
+      "D. Tỏ thái độ khó chịu nếu đồng nghiệp chưa trả lời ngay."
+    ]
+  },
+  {
+    correct: "B",
+    title: "Vì sao nhân viên cần giữ trật tự khi lãnh đạo đang phát biểu trong cuộc họp?",
+    options: [
+      "A. Vì lãnh đạo không muốn nghe ý kiến của nhân viên.",
+      "B. Vì giữ trật tự thể hiện sự tôn trọng người phát biểu và những người tham dự.",
+      "C. Vì nhân viên không được phép trao đổi bất kỳ nội dung gì.",
+      "D. Vì chỉ cần giữ trật tự khi có lãnh đạo cấp cao tham dự."
     ]
   },
   {
     correct: "C",
-    title: "Kết thúc buổi khám, người bệnh còn băn khoăn về lịch tái khám. Bạn nên:",
+    title: "Khi lãnh đạo đang phổ biến nhiệm vụ, nhân viên nói chuyện riêng gây ảnh hưởng đến người xung quanh là hành vi như thế nào?",
     options: [
-      "A. Bảo đọc giấy hẹn.",
-      "B. Để người nhà giải thích.",
-      "C. Nhắc lại thời gian tái khám và dặn dò những dấu hiệu cần quay lại sớm.",
-      "D. Kết thúc ngay cuộc giao tiếp."
+      "A. Bình thường vì không ảnh hưởng đến người nói chuyện.",
+      "B. Chấp nhận được nếu nội dung nói chuyện không liên quan đến cuộc họp.",
+      "C. Không phù hợp vì gây mất tập trung và thể hiện sự thiếu tôn trọng cuộc họp.",
+      "D. Không có vấn đề nếu người nói chuyện vẫn nghe được nội dung chính."
+    ]
+  },
+  {
+    correct: "A",
+    title: "Khi muốn phát biểu ý kiến trong cuộc họp, nhân viên nên làm gì?",
+    options: [
+      "A. Xin phép chủ trì hoặc chờ đến lượt phát biểu.",
+      "B. Nói ngay khi có ý kiến, không cần quan tâm người khác đang nói.",
+      "C. Trao đổi riêng với người bên cạnh trong lúc lãnh đạo phát biểu.",
+      "D. Nói to để mọi người chú ý đến ý kiến của mình."
+    ]
+  },
+  {
+    correct: "D",
+    title: "Vì sao không nên nói chuyện riêng khi đồng nghiệp đang phát biểu?",
+    options: [
+      "A. Vì người phát biểu có thể không thích nghe tiếng nói chuyện.",
+      "B. Vì chỉ cần giữ trật tự khi lãnh đạo phát biểu.",
+      "C. Vì người nói chuyện riêng có thể bị nhắc nhở.",
+      "D. Vì gây ảnh hưởng đến người phát biểu và quyền được lắng nghe của những người tham dự."
+    ]
+  },
+  {
+    correct: "B",
+    title: "Khi có ý kiến khác với nội dung lãnh đạo đang trình bày, nhân viên nên làm gì?",
+    options: [
+      "A. Trao đổi ngay với người ngồi bên cạnh để tìm người đồng tình.",
+      "B. Lắng nghe hết nội dung, sau đó xin phép phát biểu ý kiến một cách lịch sự.",
+      "C. Nói chen vào để lãnh đạo biết mình không đồng ý.",
+      "D. Thể hiện sự không đồng tình bằng cách nói chuyện riêng."
     ]
   },
   {
     correct: "C",
-    title: "Người bệnh khiếm thính đến khám một mình. Bạn nên:",
+    title: "Hành vi nào thể hiện văn hóa hội họp chuyên nghiệp?",
     options: [
-      "A. Gọi thật to.",
-      "B. Chỉ giao tiếp với người nhà.",
-      "C. Giao tiếp bằng chữ viết, cử chỉ phù hợp hoặc phương tiện hỗ trợ.",
-      "D. Từ chối khám."
+      "A. Chỉ tập trung lắng nghe khi nội dung liên quan trực tiếp đến mình.",
+      "B. Vừa nghe lãnh đạo vừa trao đổi riêng với đồng nghiệp.",
+      "C. Tập trung lắng nghe, giữ trật tự và phát biểu đúng lúc, đúng cách.",
+      "D. Tự do trao đổi nếu cho rằng nội dung cuộc họp không quan trọng."
     ]
   },
   {
     correct: "C",
-    title: "Người bệnh yêu cầu xem camera bệnh viện ngay tại quầy. Bạn nên:",
+    title: "Trong giờ ăn trưa tại căng tin bệnh viện, khi có người bệnh và người cao tuổi cùng dùng bữa, NVYT nên lựa chọn cách giao tiếp nào?",
     options: [
-      "A. Cho xem.",
-      "B. Mở camera.",
-      "C. Giải thích việc khai thác hình ảnh phải thực hiện theo quy định của bệnh viện.",
-      "D. Xóa dữ liệu."
+      "A. Nói chuyện thoải mái, cười đùa lớn tiếng vì đây là thời gian nghỉ ngơi cá nhân.",
+      "B. Chỉ cần giữ thái độ lịch sự khi đang trực tiếp khám, chữa bệnh cho người bệnh.",
+      "C. Nói chuyện với âm lượng vừa phải, sử dụng ngôn từ lịch sự, tôn trọng những người xung quanh.",
+      "D. Có thể nói chuyện lớn tiếng nếu không trực tiếp ảnh hưởng đến công việc chuyên môn."
+    ]
+  },
+  {
+    correct: "B",
+    title: "Giờ nghỉ trưa có vài người nói chuyện rất to và cười đùa khiến người bệnh lớn tuổi ngồi gần đó khó chịu. Hành vi nào dưới đây là phù hợp nhất?",
+    options: [
+      "A. Tiếp tục nói chuyện vì người bệnh có thể lựa chọn chỗ ngồi khác.",
+      "B. Giảm âm lượng, điều chỉnh cách giao tiếp và chú ý đến cảm nhận của những người xung quanh.",
+      "C. Chỉ giảm âm lượng khi có lãnh đạo bệnh viện xuất hiện.",
+      "D. Cho rằng người bệnh lớn tuổi khó tính nên không cần quan tâm."
     ]
   },
   {
     correct: "C",
-    title: "Một đồng nghiệp mắc lỗi giao tiếp khiến người bệnh bức xúc. Bạn nên:",
+    title: "Khi trò chuyện với đồng nghiệp trong bệnh viện, một nhân viên sử dụng những từ ngữ thiếu lịch sự. Nhận định nào sau đây đúng nhất?",
     options: [
-      "A. Đổ lỗi cho đồng nghiệp.",
-      "B. Không liên quan.",
-      "C. Ưu tiên xoa dịu người bệnh trước, sau đó phối hợp xử lý nội bộ.",
-      "D. Để người bệnh tự khiếu nại."
-    ]
-  },
-  {
-    correct: "C",
-    title: "Người bệnh nghi ngờ bị nhầm thuốc và rất hoang mang. Bạn nên:",
-    options: [
-      "A. Khẳng định không thể nhầm.",
-      "B. Phớt lờ.",
-      "C. Bình tĩnh tiếp nhận, kiểm tra ngay theo quy trình và thông tin kết quả trung thực.",
-      "D. Đổ lỗi cho khoa Dược."
+      "A. Có thể sử dụng từ ngữ tùy ý vì đang nói chuyện riêng với đồng nghiệp.",
+      "B. Chỉ cần không nói trực tiếp với người bệnh thì không ảnh hưởng đến hình ảnh bệnh viện.",
+      "C. Cần lựa chọn ngôn từ phù hợp, văn minh và tôn trọng người nghe, kể cả trong những cuộc trò chuyện ngoài chuyên môn.",
+      "D. Ngôn từ trong giờ nghỉ không liên quan đến đạo đức nghề nghiệp."
     ]
   }
 ];
